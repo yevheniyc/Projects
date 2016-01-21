@@ -7,4 +7,6 @@ Somebody has already written something similar:
 ```
 However, I need them to be more specific and robust at the same time. Might interface with Django.
 
+NOTE: Ohh, and please don't use my api keys - I will find you :)
+
 
