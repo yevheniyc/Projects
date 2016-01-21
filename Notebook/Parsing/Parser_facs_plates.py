@@ -19,6 +19,11 @@ PLATE_DIMENSIONS = {
     384: (16, 24),
 }
 
+# Patterns for different FACS machines
+CANTO_PATTERN = re.compile(r'[\w\d_-]+_[A-Z]\d+_(?P<well>[A-Z]\d{2})')
+FACSCAN_PATTERN = re.compile(r'(?P<plate>\d{2})(?P<well>[A-Z]\d{2})')
+ANTIGEN_PATTERN = re.compile(r'(Ag\d+)')
+
 def parse_plate_format(plate_format):
     """ Return the number of wells and the orientation of a plate format.
     
@@ -62,6 +67,7 @@ def well_name_position(plate_format, well_name):
     else:
         raise ValueError("Invalid well_name: %s" % str(well_name))
 
+
 class Plate(object):
     """ Constructor for a new type - Plate, which will be used to convert 
         csv data (including Straight ELISA) into python objects. 
@@ -86,6 +92,7 @@ class Plate(object):
     def __repr__(self):
         return "<{}: {}>".format(self.__class__.__name__, self.name)
     
+
 class FACSPlate(Plate):
     """ Inherites from Plate. Used for converting FACS text files into
         python objects.
@@ -102,6 +109,7 @@ class FACSPlate(Plate):
     def __repr__(self):
         return "<{}: {} - {}>".format(
             self.__class__.__name__, self.name, self.data_point_name)
+
 
 class PlateDataParser(object):
     """ Subclassed by CSVParser, SoftmaxParser
@@ -125,6 +133,7 @@ class PlateDataParser(object):
     def parse_file(self, data_file):
         raise NotImplementedError()
         
+
 class CSVParser(PlateDataParser):
     """
     """
@@ -139,10 +148,6 @@ class CSVParser(PlateDataParser):
 
 
 class FACSParser(CSVParser):
-    
-    CANTO_PATTERN = re.compile(r'[\w\d_-]+_[A-Z]\d+_(?P<well>[A-Z]\d{2})')
-    FACSCAN_PATTERN = re.compile(r'(?P<plate>\d{2})(?P<well>[A-Z]\d{2})')
-    ANTIGEN_PATTERN = re.compile(r'(Ag\d+)')
 
     def parse_file(self, data_file):
         rows = self._nonempty_rows(data_file)
@@ -193,19 +198,14 @@ class FACSParser(CSVParser):
     def _flowjo_pattern(cls, sample_name):
         '''Return the correct FloJo pattern for Canto or FACScan. '''
         # check the canto pattern before the facscan pattern, because the
-        #   plate name in a canto file could match the facscan pattern
-        if cls.CANTO_PATTERN.search(sample_name):
-            return cls.CANTO_PATTERN
+        # plate name in a canto file could match the facscan pattern
+        if CANTO_PATTERN.search(sample_name):
+            return CANTO_PATTERN
         else:
-            return cls.FACSCAN_PATTERN
+            return FACSCAN_PATTERN
 
 with open('/usr/local/var/django/code_work/tests/xabtracker/data_files/facs_table_96.txt', 'rb') as data_file:
     plates = FACSParser('96 well horizontal').parse_file(data_file)
-
-
-CANTO_PATTERN = re.compile(r'[\w\d_-]+_[A-Z]\d+_(?P<well>[A-Z]\d{2})')
-FACSCAN_PATTERN = re.compile(r'(?P<plate>\d{2})(?P<well>[A-Z]\d{2})')
-ANTIGEN_PATTERN = re.compile(r'(Ag\d+)')
 
 def well_name_position(well_name, columns=12):
     '''Convert a well name (A01-K12) or (1-96) to its position (1-96)
