@@ -1,12 +1,13 @@
-Handling Wiki* edits with SocketIO and threading.
+####Handling Wiki* edits with SocketIO and threading.
+***
 
-NOTES:
-Code specifically processes the incomming RCStream from stream.wikimedia.org, not the hardcoded dummy data
+NOTE: Code specifically processes the incomming RCStream from stream.wikimedia.org, not the hardcoded dummy data mentioned in the chellenge at: https://github.com/halfak/research-engineering-task
 
 1. Default socketIO-client installs socket.io protocol 1.x, whereas RCStream runs on 0.9.
    To fix, manually install 0.5.6:
+   ```
    >> pip install https://pypi.python.org/packages/source/s/socketIO-client/socketIO-client-0.5.6.tar.gz
-
+   ```
 2. Review information:
     - Review concurrency, threads, sockets, web sockets: 
         - Gevent library: http://learn-gevent-socketio.readthedocs.org/en/latest/general_concepts.html
