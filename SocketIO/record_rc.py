@@ -1,4 +1,7 @@
-
+"""
+Response to Wikipedia challenge. View README.md for a detailed description
+of the challenge and approach I've taken.
+"""
 import time
 import json
 import random

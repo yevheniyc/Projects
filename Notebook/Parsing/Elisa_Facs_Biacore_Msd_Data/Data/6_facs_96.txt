@@ -1,0 +1,52 @@
+Sample	CHOKO 22	CHOKO 22 HuLPAR1	Ratio
+1: Specimen_001_A1_A01.fcs	139	285	2.05
+2: Specimen_001_A2_A02.fcs	132	271	2.05
+3: Specimen_001_A3_A03.fcs	140	39570	283
+4: Specimen_001_A4_A04.fcs	101	39570	392
+5: Specimen_001_A5_A05.fcs	1311	1778	1.36
+6: Specimen_001_A6_A06.fcs	1851	2651	1.43
+7: Specimen_001_A7_A07.fcs	125	257	2.06
+8: Specimen_001_A8_A08.fcs	1199	10519	8.77
+9: Specimen_001_A9_A09.fcs	383	637	1.66
+10: Specimen_001_A10_A10.fcs	4100	2366	0.58
+11: Specimen_001_A11_A11.fcs	3663	4265	1.16
+12: Specimen_001_A12_A12.fcs	303	490	1.62
+25: Specimen_001_B1_B01.fcs	130	244	1.88
+26: Specimen_001_B2_B02.fcs	119	268	2.25
+27: Specimen_001_B3_B03.fcs	122	34400	282
+28: Specimen_001_B4_B04.fcs	146	35930	246
+29: Specimen_001_B5_B05.fcs	417	648	1.55
+30: Specimen_001_B6_B06.fcs	223	270	1.21
+31: Specimen_001_B7_B07.fcs	1578	2082	1.32
+32: Specimen_001_B8_B08.fcs	288	616	2.14
+33: Specimen_001_B9_B09.fcs	156	264	1.69
+34: Specimen_001_B10_B10.fcs	127	187	1.47
+35: Specimen_001_B11_B11.fcs	188	225	1.2
+36: Specimen_001_B12_B12.fcs	245	285	1.16
+49: Specimen_001_C1_C01.fcs	531	805	1.52
+50: Specimen_001_C2_C02.fcs	4383	5346	1.22
+51: Specimen_001_C3_C03.fcs	7650	8396	1.1
+52: Specimen_001_C4_C04.fcs	145	213	1.47
+53: Specimen_001_C5_C05.fcs	138	197	1.43
+54: Specimen_001_C6_C06.fcs	191	294	1.54
+55: Specimen_001_C7_C07.fcs	181	249	1.38
+56: Specimen_001_C8_C08.fcs	1550	2183	1.41
+57: Specimen_001_C9_C09.fcs	804	2309	2.87
+58: Specimen_001_C10_C10.fcs	161	190	1.18
+59: Specimen_001_C11_C11.fcs	262	467	1.78
+60: Specimen_001_C12_C12.fcs	427	1292	3.03
+73: Specimen_001_D1_D01.fcs	261	474	1.82
+74: Specimen_001_D2_D02.fcs	4255	5542	1.3
+75: Specimen_001_D3_D03.fcs	2295	3081	1.34
+76: Specimen_001_D4_D04.fcs	163	235	1.44
+77: Specimen_001_D5_D05.fcs	1702	2362	1.39
+78: Specimen_001_D6_D06.fcs	5074	6002	1.18
+79: Specimen_001_D7_D07.fcs	203	268	1.32
+80: Specimen_001_D8_D08.fcs	4089	5080	1.24
+81: Specimen_001_D9_D09.fcs	289	300	1.04
+82: Specimen_001_D10_D10.fcs	179	249	1.39
+83: Specimen_001_D11_D11.fcs	200	270	1.35
+84: Specimen_001_D12_D12.fcs	137	235	1.72
+
+Mean	1134	1926	4.8
+StdDev	1617	4154	30.9
