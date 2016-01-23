@@ -16,4 +16,5 @@ Scripts written in Jupyter:
   3. GT_Computer_Networks - assignments and projects for the Georgia Tech's Computer Networks graduate course
   4. Parsing - a set of day-to-day parsersing scripts
   5. Python_Cookbook_3 - follow Python Cookbook 3rd Edition 
+
 ***
