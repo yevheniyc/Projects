@@ -5,6 +5,7 @@ NOTE: Code specifically processes the incomming RCStream from stream.wikimedia.o
 
 1. Default socketIO-client installs socket.io protocol 1.x, whereas RCStream runs on 0.9.
    To fix, manually install 0.5.6:
+  
    ```
    >> pip install https://pypi.python.org/packages/source/s/socketIO-client/socketIO-client-0.5.6.tar.gz
    ```
