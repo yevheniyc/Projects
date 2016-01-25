@@ -18,3 +18,6 @@ Scripts written in Jupyter:
   5. Python_Cookbook_3 - follow Python Cookbook 3rd Edition 
 
 ***
+
+####GT_Computer_Networks
+Assignments and projects for the Georgia Tech's Computer Networks 6250 Spring 2016 graduate course (OMSCS Program) 
