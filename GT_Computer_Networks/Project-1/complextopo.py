@@ -19,36 +19,36 @@ from mininet.util import custom
 
 # Topology to be instantiated in Mininet
 class ComplexTopo(Topo):
-    "Mininet Complex Topology"
+	"Mininet Complex Topology"
 
-    def __init__(self, cpu=.1, max_queue_size=None, **params):
+	def __init__(self, cpu=.1, max_queue_size=None, **params):
 
-        # Initialize topo
-        Topo.__init__(self, **params)
+		# Initialize topo
+		Topo.__init__(self, **params)
 
-   	# Host and link configuration
-	hostConfig = {'cpu': cpu}
-	ethernetConfig = {'bw': 20, 'delay': '1ms', 'loss': 0,
-			  'max_queue_size': max_queue_size} 
-	wifiConfig = {'bw': 10, 'delay': '3ms', 'loss': 3,
-		      'max_queue_size': max_queue_size}
-	threegConfig = {'bw': 2, 'delay': '10ms', 'loss': 10,
-		        'max_queue_size': max_queue_size}
+		# Host and link configuration
+		hostConfig = {'cpu': cpu}
+		ethernetConfig = {'bw': 20, 'delay': '1ms', 'loss': 0,
+						  'max_queue_size': max_queue_size} 
+		wifiConfig = {'bw': 10, 'delay': '3ms', 'loss': 3,
+					  'max_queue_size': max_queue_size}
+		threegConfig = {'bw': 2, 'delay': '10ms', 'loss': 10,
+						'max_queue_size': max_queue_size}
 
-	# Hosts and switches - mininet
-	h1 = self.addHost('h1', **hostConfig)
-	h2 = self.addHost('h2', **hostConfig)
-	h3 = self.addHost('h3', **hostConfig)
+		# Hosts and switches - mininet
+		h1 = self.addHost('h1', **hostConfig)
+		h2 = self.addHost('h2', **hostConfig)
+		h3 = self.addHost('h3', **hostConfig)
 
-	s1 = self.addSwitch('s1')
-	s2 = self.addSwitch('s2')
-	s3 = self.addSwitch('s3')
-	s4 = self.addSwitch('s4')
+		s1 = self.addSwitch('s1')
+		s2 = self.addSwitch('s2')
+		s3 = self.addSwitch('s3')
+		s4 = self.addSwitch('s4')
 
-	# different types of links - mininet
-	self.addLink(h1, s1, **ethernetConfig)
-	self.addLink(s1, s2, **ethernetConfig)
-	self.addLink(s2, s3, **ethernetConfig)
-	self.addLink(s2, s4, **ethernetConfig)
-	self.addLink(s3, h2, **wifiConfig)
-	self.addLink(s4, h3, **threegConfig)
+		# different types of links - mininet
+		self.addLink(h1, s1, **ethernetConfig)
+		self.addLink(s1, s2, **ethernetConfig)
+		self.addLink(s2, s3, **ethernetConfig)
+		self.addLink(s2, s4, **ethernetConfig)
+		self.addLink(s3, h2, **wifiConfig)
+		self.addLink(s4, h3, **threegConfig)
