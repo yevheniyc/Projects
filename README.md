@@ -13,9 +13,8 @@ Handy script for using Multi-threading with Websockets and Python. I also includ
 Scripts written in Jupyter: 
   1. Data_Structures_and_Algorithms - follow Data Structures and Algorithms by Goodrich 
   2. Evercam_API_Test - testing and creating wrappers for Evercam APIs
-  3. GT_Computer_Networks - assignments and projects for the Georgia Tech's Computer Networks graduate course
-  4. Parsing - a set of day-to-day parsing scripts
-  5. Python_Cookbook_3 - follow Python Cookbook 3rd Edition 
+  3. Parsing - a set of day-to-day parsing scripts
+  4. Python_Cookbook_3 - follow Python Cookbook 3rd Edition 
 
 ***
 
