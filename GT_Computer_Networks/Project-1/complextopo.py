@@ -1,5 +1,5 @@
 """
-complextop.py - Yevheniy Chuba - 01/24/2016
+complextopo.py - Yevheniy Chuba - 01/24/2016
 
 Mimiking complex network topologies with Mininet.
 The following link configurations allow to mimic 
@@ -19,7 +19,18 @@ from mininet.util import custom
 
 # Topology to be instantiated in Mininet
 class ComplexTopo(Topo):
-	"Mininet Complex Topology"
+	"""Mininet Complex Topology:
+	
+		h1-(ethernet)-s1-(ethernet)-s2-(ethernet)-s3-(wifi)-h2
+					    |
+					 (ethernet)
+					    |
+					    s4
+					    |
+					   (3G)
+					    |
+					    h3
+	"""
 
 	def __init__(self, cpu=.1, max_queue_size=None, **params):
 
