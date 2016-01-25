@@ -5,7 +5,8 @@ Mimiking complex network topologies with Mininet.
 The following link configurations allow to mimic 
 the following links:
 
-	     Bandwidth(Mbps)    Delay(ms)    Loss Rate(%)		Ethernet:       20  		1		0
+	     Bandwidth(Mbps)    Delay(ms)    Loss Rate(%)		
+   Ethernet:       20  		1		0
    WiFi: 	   10		   3		   3
    3G: 		   2		   10		   10
 """
