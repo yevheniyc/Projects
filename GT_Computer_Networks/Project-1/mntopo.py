@@ -5,7 +5,10 @@ from mininet.util import custom
 
 # Topology to be instantiated in Mininet
 class MNTopo(Topo):
-    "Mininet test topology"
+    """Mininet test topology:
+    
+        receiver-(ethernet)-s1-(ethernet)-s2-(ethernet)-s3-(ethernet)-sender    
+    """
 
     def __init__(self, cpu=.1, max_queue_size=None, **params):
 
