@@ -27,5 +27,14 @@ Assignments and projects for the Georgia Tech's Computer Networks 6250 Spring 20
 A set of fun games developed with Python and CodeSkulptor for the Coursera's Interactive Programming with Python. 
 Implemented basic concepts in mathematics, OOP and graphics to build interactive and dynamic games. Links are provided to "test" the games :)
   1. Pong - implementation of classic ping pong game (don't have too much fun!). Play [here](http://www.codeskulptor.org/#user30_SsWb6yzDfo7EUyz.py)
+    - Click on the play button to view game interface
+    - Use keyboard arrows: player-1 ('up', 'down') and player-2 ('w', 's')
+    - Ball movement will accelerate during the game!
   2. Blackjack - implementation of Blackjack. Please, I don't want you gambling issues on my conscience. Play [here](http://www.codeskulptor.org/#user31_R8PVRLqskziSghE.py)
+    - Click on the play button
   3. RiceRocks - spaceships, meteors, lasers, explosions, collisions, acceleration, powerful graphics - no more work for today! [Enjoy here](http://www.codeskulptor.org/#user33_6KEZdn2rEvmOGDF.py)
+    - Click on the play button
+    - Click "space bar" to shoot
+    - Use keyboard arrows for movement
+
+***
