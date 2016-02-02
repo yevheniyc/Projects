@@ -1,4 +1,5 @@
-#Computer Networks - Georgia Tech's OMSCS Program
+##Computer Networks (6250) - GT's OMSCS Program
+
 Everything related to the course:
 
 1. Projects
