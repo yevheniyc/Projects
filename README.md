@@ -16,7 +16,8 @@ Scripts written in Jupyter:
   4. Python_Cookbook_3 - follow Python Cookbook 3rd Edition
 
 ##GT_Computer_Networks
-Assignments and projects for the Georgia Tech's Computer Networks 6250 Spring 2016 graduate course (OMSCS Program) 
+Assignments and projects for the Georgia Tech's Computer Networks 6250 Spring 2016 graduate course (OMSCS Program)
+  1. Project_1 - Mininet, simple/complex network topologies, network simulation
 
 ##Game
 A set of fun games developed with Python and CodeSkulptor for the Coursera's Interactive Programming with Python. 
