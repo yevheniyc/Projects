@@ -33,4 +33,6 @@ Implemented basic concepts in mathematics, OOP and graphics to build interactive
     - Click "space bar" to shoot
     - Use keyboard arrows for movement
 
-***
+##Python_Cookbook_3
+Testing scripts presented in the book with short summeries, using Jupyter. 
+The book can be found [here](http://shop.oreilly.com/product/0636920027072.do)
