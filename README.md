@@ -13,7 +13,6 @@ Scripts written in Jupyter:
   1. Data_Structures_and_Algorithms - follow Data Structures and Algorithms by Goodrich 
   2. Evercam_API_Test - testing and creating wrappers for Evercam APIs
   3. Parsing - a set of day-to-day parsing scripts
-  4. Python_Cookbook_3 - follow Python Cookbook 3rd Edition
 
 ##GT_Computer_Networks
 Assignments and projects for the Georgia Tech's Computer Networks 6250 Spring 2016 graduate course (OMSCS Program)
