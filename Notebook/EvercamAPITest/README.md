@@ -1,4 +1,4 @@
-#### Evercam - if you don't know about it... well too bad.
+#### Evercam API
 ***
 Testing evercam's APIs and creating Python wrappers around them. 
 Somebody has already written something similar:
