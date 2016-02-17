@@ -36,3 +36,5 @@ Implemented basic concepts in mathematics, OOP and graphics to build interactive
 ##Python_Cookbook_3
 Testing scripts presented in the book with short summeries, using Jupyter. 
 The book can be found [here](http://shop.oreilly.com/product/0636920027072.do)
+
+Each Chapter is followed with a real life example. Looking forward to sections at the end of the book, mixing Python and C's threads! If you have any ideas where I could implement it, drop me a message!
