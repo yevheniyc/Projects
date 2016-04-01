@@ -14,6 +14,7 @@ I handled their challenge with multithreading, but they insisted that multi-proc
 Handy script for using Multi-threading with Websockets and Python. I also included their proposed solution (Process_Changes.py), 
 but my script can do more work in less time (arguably). 
 
+The main problem here is that threads in Python do NOT achieve true concurrency because of the GIL lock. There are a few tricks to work around it. One of them is to avoid multi-threading all together and use parallism instead with the subprocess module (for example). Another way is to write milti-threading code with synchronization techniques in C and wrap Python around it.
 ***
 
 ####Game
