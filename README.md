@@ -23,7 +23,7 @@ Implemented basic concepts in mathematics, OOP and graphics to build interactive
     - Click on the play button to view game interface
     - Use keyboard arrows: player-1 ('up', 'down') and player-2 ('w', 's')
     - Ball movement will accelerate during the game!
-  2. Blackjack - implementation of Blackjack. Please, I don't want you gambling issues on my conscience. Play [here](http://www.codeskulptor.org/#user31_R8PVRLqskziSghE.py)
+  2. Blackjack - implementation of Blackjack. Please, I don't want your gambling issues on my conscience. Play [here](http://www.codeskulptor.org/#user31_R8PVRLqskziSghE.py)
     - Click on the play button
   3. RiceRocks - spaceships, meteors, lasers, explosions, collisions, acceleration, powerful graphics - no more work for today! [Enjoy here](http://www.codeskulptor.org/#user33_6KEZdn2rEvmOGDF.py)
     - Click on the play button
