@@ -66,4 +66,5 @@ Topics covered with examples in C are Producer-Consumer models, server/client co
 ####Genomic Data Visualization in Python and Jupyter (to be implemented)
 Testing and implementation of the following project at FullStackDatascientist.io: [click here](http://fullstackdatascientist.io/2016-03-15-genomic-data-visualization-using-python/)
 
+Great OOP approach for larger data driven projects.
 ***
