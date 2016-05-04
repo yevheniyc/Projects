@@ -62,3 +62,8 @@ A set of projects tackling multi-processing, multi-threading, and socket program
 Topics covered with examples in C are Producer-Consumer models, server/client communication, coditional variables, critical sections, mutaxes and more!
 
 ***
+
+####Genomic Data Visualization in Python and Jupyter (to be implemented)
+Testing and implementation of the following project at FullStackDatascientist.io: [click here](http://fullstackdatascientist.io/2016-03-15-genomic-data-visualization-using-python/)
+
+***
