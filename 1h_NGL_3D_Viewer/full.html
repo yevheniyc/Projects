@@ -1,0 +1,543 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="alternate" type="application/rss+xml" title="RCSB PDB - Latest Released Structures" href="/pdb/rss/LastLoad"/>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <title>NGL-Viewer</title>
+    
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta http-equiv="Cache-Control" content="max-age=3600">
+    <meta http-equiv="Cache-Control" content="private">
+    <meta http-equiv="Cache-Control" content="must-revalidate">
+    <meta http-equiv="Pragma" content="private">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="Charset" content="UTF-8"/>
+    <meta http-equiv="content-language" content="en-US"/>
+    
+    <!-- Apple Smart App Header -->
+    <meta name="apple-itunes-app" content="app-id=529153183"/>
+    
+    <!-- Include the latest JQuery (we support) from our CDN -->
+    <script type="text/javascript" src="https://cdn.rcsb.org/javascript/jquery/jquery-latest.min.js"></script>
+    <!-- Include the latest Bootstrap (we support) from our CDN -->
+    <script type="text/javascript" src="https://cdn.rcsb.org/javascript/bootstrap/latest/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" type="text/css" media="all" href="https://cdn.rcsb.org/javascript/bootstrap/latest/css/bootstrap.min.css"/>
+    <!-- Include any other core 3rd party libraries from our CDN -->
+    <link rel="stylesheet" href="https://cdn.rcsb.org/javascript/fontawesome/latest/css/font-awesome.min.css"/>
+     
+    <!-- WRO Includes -->
+    <link rel="stylesheet" type="text/css" media="all" href="libs/ngl.css"/>
+    <!-- <script type="text/javascript" src="libs/ngl.js"></script> -->
+
+    <style>
+        @media (min-height:  450px) { #stageViewport { height: 250px; } }
+        @media (min-height:  500px) { #stageViewport { height: 300px; } }
+        @media (min-height:  550px) { #stageViewport { height: 350px; } }
+        @media (min-height:  600px) { #stageViewport { height: 400px; } }
+        @media (min-height:  650px) { #stageViewport { height: 500px; } }
+        @media (min-height:  700px) { #stageViewport { height: 500px; } }
+        @media (min-height:  750px) { #stageViewport { height: 500px; } }
+        @media (min-height:  800px) { #stageViewport { height: 550px; } }
+        @media (min-height:  850px) { #stageViewport { height: 550px; } }
+        @media (min-height:  900px) { #stageViewport { height: 600px; } }
+        @media (min-height:  950px) { #stageViewport { height: 650px; } }
+        @media (min-height: 1000px) { #stageViewport { height: 700px; } }
+        @media (min-height: 1050px) { #stageViewport { height: 750px; } }
+        @media (min-height: 1100px) { #stageViewport { height: 800px; } }
+        
+        #pickingInfo {
+            position: absolute;
+            margin-left: 30px;
+            padding: 6px;
+            top: 70px;
+            z-index: 100;
+            background-color: rgba( 255, 255, 255, 0.7 );
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <div id="header">
+        <div class="container" id="maincontentcontainer">
+            <div class="row">
+                <div class="col-md-12 col-sm-12">
+        
+                    <button type="button" class="navbar-toggle pull-left" data-toggle="collapse" data-target="#navbar-collapse-SSP" id="SSP-collapsed-tabs">
+                        <span class="glyphicon glyphicon-menu-hamburger" aria-hidden="true"></span> Navigation Tabs
+                    </button>
+
+
+                    <div class="row" id="collapsedHeader">
+                        <div class="col-md-8 col-sm-12">
+                            
+                            <h1><span id="structureID">5L8O</span></h1>
+                            <h4><span id="structureTitle">crystal structure of human FABP6 in complex with cholate</span></h4>
+                        </div>
+
+                          <div class="col-md-4 col-sm-12">
+                              <br>
+                              
+                              <div class="btn-group pull-right" role="group" id="ProductPrimaryActions">
+                                  <div class="btn-group" role="group" id="DisplayFilesButton">
+                                      <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-expanded="false">
+                                          <span class="glyphicon glyphicon-file" aria-hidden="true"></span> Display Files
+                                          <span class="caret"></span>
+                                      </button>
+                                      <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
+                                          <li role="presentation"><a role="menuitem" tabindex="-1" href="/pdb/files/fasta.txt?structureIdList=5L8O">FASTA Sequence</a></li>
+                                          
+                                          <li role="presentation"><a role="menuitem" tabindex="-1" href="/pdb/files/5L8O.pdb">PDB File</a></li>
+                                          <li role="presentation"><a role="menuitem" tabindex="-1" href="/pdb/files/5L8O.pdb?headerOnly=YES">PDB File (Header)</a></li>
+                                          
+                                          <li class="divider"></li>
+                                          <li role="presentation"><a role="menuitem" tabindex="-1" href="/pdb/files/5L8O.cif">mmCIF File</a></li>
+                                          <li role="presentation"><a role="menuitem" tabindex="-1" href="/pdb/files/5L8O.cif?headerOnly=YES">mmCIF File (Header)</a></li>
+                                          <li class="divider"></li>
+                                          <li role="presentation"><a role="menuitem" tabindex="-1" href="/pdb/files/5L8O.xml">PDBML/XML File</a></li>
+                                          <li role="presentation"><a role="menuitem" tabindex="-1" href="/pdb/files/5L8O-noatom.xml">PDBML/XML File (Header)</a></li>
+                                      </ul>
+                                  </div>
+
+                                  <div class="btn-group" role="group" id="DownloadFilesButton">
+                                      <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-expanded="false">
+                                          <span class="glyphicon glyphicon-download" aria-hidden="true"></span> Download Files
+                                          <span class="caret"></span>
+                                      </button>
+                                      <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu2">
+                                          <li role="presentation"><a role="menuitem" tabindex="-1" href="/pdb/download/downloadFile.do?fileFormat=FASTA&amp;compression=NO&amp;structureId=5L8O">FASTA Sequence</a></li>
+                                          
+                                          <li role="presentation"><a role="menuitem" tabindex="-1" href="/pdb/download/downloadFile.do?fileFormat=pdb&amp;compression=NO&amp;structureId=5L8O">PDB File (Text)</a></li>
+                                          <li role="presentation"><a role="menuitem" tabindex="-1" href="/pdb/files/5L8O.pdb.gz">PDB File (gz)</a></li>
+                                          
+                                          <li class="divider"></li>
+                                          <li role="presentation"><a role="menuitem" tabindex="-1" href="/pdb/download/downloadFile.do?fileFormat=cif&amp;compression=NO&amp;structureId=5L8O">PDBx/mmCIF File</a></li>
+                                          <li role="presentation"><a role="menuitem" tabindex="-1" href="/pdb/files/5L8O.cif.gz">PDBx/mmCIF File (gz)</a></li>
+                                          <li class="divider"></li>
+                                          <li role="presentation"><a role="menuitem" tabindex="-1" href="/pdb/download/downloadFile.do?fileFormat=xml&amp;compression=NO&amp;structureId=5L8O">PDBML/XML File</a></li>
+                                          <li role="presentation"><a role="menuitem" tabindex="-1" href="/pdb/files/5L8O.xml.gz">PDBML/XML File (gz)</a></li>
+                                          <li class="divider"></li>
+
+                                          
+                                          <li role="presentation"><a role="menuitem" tabindex="-1" href="/pdb/download/downloadFile.do?fileFormat=structfact&amp;structureId=5L8O">Structure Factor (Text)</a></li>
+                                          <li role="presentation"><a role="menuitem" tabindex="-1" href="/pdb/files/r5L8Osf.ent.gz">Structure Factor (gz)</a></li>
+                                          
+                                          <li role="presentation"><a role="menuitem" tabindex="-1" href="/pdb/files/5L8O.pdb1.gz">Biological Assembly 1 (gz) (A)</a></li>
+                                          
+                                          <li role="presentation"><a role="menuitem" tabindex="-1" href="/pdb/files/5L8O.pdb2.gz">Biological Assembly 2 (gz) (A)</a></li>
+                                          
+                                          <li role="presentation"><a role="menuitem" tabindex="-1" href="/pdb/files/5L8O.pdb3.gz">Biological Assembly 3 (gz) (A)</a></li>
+                                          
+                                      </ul>
+                                  </div>
+                              </div>
+                          </div>
+                    </div>
+                    <br class="visible-xs">
+                </div>
+            </div>
+
+            <div id="viewerContainer" class="row" style="background-color: white;">
+
+                <div id="leftColumn" class="col-md-9 col-sm-12">
+
+                    <div id="viewerPanel" class="panel panel-default">
+                        <div id="viewerHeading" class="panel-heading">
+                            <div class="row">
+                                <div class="col-sm-10">
+                                    <small>Note: Use your mouse to drag, rotate, and zoom in and out of the structure.</small>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div id="viewerBody" class="panel-body" style="padding: 1px;">
+                            <div id="pickingInfo"></div>
+                            <div id="stageViewport" style="min-width: 100%;"></div>
+                        </div>
+
+                        <div id="viewerFooter" class="panel-footer">
+                            <div class="row">
+                                <small style="padding-top: 7px" class="col-sm-5">
+                                    <a href="https://github.com/arose/ngl" target="_blank">NGL</a> is a WebGL based 3D viewer powered by <a href="http://mmtf.rcsb.org" target="_blank">MMTF</a>.
+                                </small>
+
+                                <div class="col-sm-5 col-sm-push-2 largeStructureHidden">
+                                    <label for="viewerSelect" class="col-sm-6 text-right" style="padding-top: 5px">
+                                        <small>Select a Viewer</small>
+                                    </label>
+                                    <select id="viewerSelect" class="col-sm-6 input-sm">
+                                        <option value="PV">PV (WebGL)</option>
+                                        <option value="NGL">NGL (WebGL)</option>
+                                        <option value="HTML5">JSmol (JavaScript)</option>
+                                        <option value="JAVA">Jmol (Java Applet)</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+    
+                <div id="rightColumn" class="col-md-3 col-sm-12">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <div class="row">
+                                <div class="col-sm-8">
+                                    Display Options
+                                </div>
+                                <div class="col-sm-4" style="padding-left: 0;">
+                                    <div id="stageProgress" class="progress" style="display: none; margin-bottom: 0;">
+                                        <div class="progress-bar progress-bar-warning progress-bar-striped active" style="width: 70%"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="panel-body form-horizontal">
+
+                            <div class="form-group">
+                                <label class="col-sm-5 control-label" for="assemblySelect">Assembly</label>
+                                <div class="col-sm-7">
+                                    <select id="assemblySelect" class="form-control input-sm"></select>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label class="col-sm-5 control-label" for="modelSelect">Model</label>
+                                <div class="col-sm-7">
+                                    <select id="modelSelect" class="form-control input-sm"></select>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label class="col-sm-5 control-label" for="symmetrySelect">Symmetry</label>
+                                <div class="col-sm-7">
+                                    <select id="symmetrySelect" class="form-control input-sm"></select>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label class="col-sm-5 control-label" for="styleSelect">
+                                    Style
+                                    
+                                </label>
+                                <div class="col-sm-7">
+                                    <select id="styleSelect" class="form-control input-sm"></select>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label class="col-sm-5 control-label" for="colorSchemeSelect">Color</label>
+                                <div class="col-sm-7">
+                                    <select id="colorSchemeSelect" class="form-control input-sm"></select>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label class="col-sm-5 control-label" for="ligandStyleSelect">Ligand</label>
+                                <div class="col-sm-7">
+                                    <select id="ligandStyleSelect" class="form-control input-sm"></select>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label class="col-sm-5 control-label" for="qualitySelect">Quality</label>
+                                <div class="col-sm-7">
+                                    <select id="qualitySelect" class="form-control input-sm">
+                                        <option value="auto">Automatic</option>
+                                        <option value="low">Low</option>
+                                        <option value="medium">Medium</option>
+                                        <option value="high">High</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div class="col-sm-12">
+                                <hr/>
+                            </div>
+
+                            <div class="form-group col-sm-12">
+                                <div class="col-sm-6 checkbox">
+                                    <label>
+                                        <input checked type="checkbox" id="waterVisibilityCheckbox"/>
+                                        Water
+                                    </label>
+                                </div>
+                                <div class="col-sm-6 checkbox">
+                                    <label>
+                                        <input checked type="checkbox" id="ionVisibilityCheckbox"/>
+                                        Ions
+                                    </label>
+                                </div>
+                            </div>
+
+                            <div class="form-group col-sm-12">
+                                <div class="col-sm-6 checkbox">
+                                    <label>
+                                        <input checked type="checkbox" id="hydrogenVisibilityCheckbox"/>
+                                        Hydrogens
+                                    </label>
+                                </div>
+                                <!-- <div class="col-sm-6 checkbox">
+                                    <label>
+                                        <input checked type="checkbox" id="hydrogenVisibilityCheckbox"/>
+                                        Hydrogens
+                                    </label>
+                                </div> -->
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <div class="panel panel-default">
+                        <div class="panel-heading">Viewer Options</div>
+                        <div class="panel-body form-horizontal">
+
+                            <div class="form-group col-sm-12">
+                                <div class="col-sm-6 checkbox">
+                                    <label>
+                                        <input type="checkbox" id="spinCheckbox"/>
+                                        Spin
+                                    </label>
+                                </div>
+
+                                <div class="col-sm-6">
+                                    <button class="btn btn-primary btn-sm" id="centerButton">Center</button>
+                                </div>
+                            </div>
+
+                            <div class="form-group col-sm-12">
+                                <div class="col-sm-6 checkbox">
+                                    <label>
+                                        <input type="checkbox" id="fullscreenCheckbox"/>
+                                        Fullscreen
+                                    </label>
+                                </div>
+                                <div class="col-sm-6">
+                                    <button class="btn btn-primary btn-sm" id="screenshotButton">Screenshot</button>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-9 col-sm-12" style="padding-left: 30px; padding-right: 30px;">
+                    <small>
+                        When using the NGL Viewer please cite:
+                        <ul>
+                            <li>AS Rose, AR Bradley, Y Valasatava, JM Duarte, A Prli&#x0107; and PW Rose. <i>Web-based molecular graphics for large complexes.</i> ACM Proceedings of the 21st International Conference on Web3D Technology (Web3D '16): 185-186, 2016. <a href="http://dx.doi.org/10.1145/2945292.2945324" target="_blank">doi:10.1145/2945292.2945324</a></li>
+                            <li>AS Rose and PW Hildebrand. <i>NGL Viewer: a web application for molecular visualization.</i> Nucl Acids Res (1 July 2015) 43 (W1): W576-W579 first published online April 29, 2015. <a href="https://doi.org/10.1093/nar/gkv402" target="_blank">doi:10.1093/nar/gkv402</a></li>
+                        </ul>
+                    </small>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+
+    <script src="http://cdn.rcsb.org/rcsb-pdb/assets/vendor/ngl/ngl.js"></script>
+    <script>
+
+        var isAUResidueLarge = false;
+        
+
+        function getParam( id ){
+            var a = new RegExp( id + "=([^&#=]*)" );
+            var m = a.exec( window.location.search );
+            if( m ){
+                return decodeURIComponent( m[1] );
+            }else{
+                return undefined;
+            }
+        }
+
+        function setValue( id, value ){
+            document.getElementById( id ).value = value;
+        }
+
+        function setSelectOptions( id, optionsDict, selectedName ){
+            var options = [];
+            for( var name in optionsDict ){
+                var selected = name === (""+selectedName) ? "selected " : "";
+                options.push(
+                    "<option " + selected + "value='" + name + "'>" + optionsDict[ name ] + "</option>"
+                );
+            }
+            document.getElementById( id ).innerHTML = options.join("");
+        }
+
+        function setSelectChange( id, onChange ){
+            document.getElementById( id ).addEventListener( "change", function( event ){
+                var targetElm = event.target;
+                var value = targetElm.options[ targetElm.selectedIndex ].value;
+                onChange( value );
+            } );
+        }
+
+        function setCheckboxValue( id, value ){
+            document.getElementById( id ).checked = !!value;
+        }
+
+        function setCheckboxChange( id, onChange ){
+            document.getElementById( id ).addEventListener( "change", function( event ){
+                onChange( event.target.checked );
+            } );
+        }
+
+        function setButtonClick( id, onClick ){
+            document.getElementById( id ).addEventListener( "click", function(){
+                onClick();
+            } );
+        }
+
+        function getViewerUrl( viewer, pdbid, bionumber ){
+            var url = "";
+            if (viewer === "NGL") {
+                url += "/pdb/ngl/ngl.do?pdbid="+pdbid;
+                url += (bionumber > -1)? "&bionumber=" + bionumber : '';
+            }else if (viewer === "PV") {
+                url += "/pdb/pv/pv.do?pdbid="+pdbid;
+                url += (bionumber > -1)? "&bionumber=" + bionumber : '';
+            }else if (viewer === "JAVA" || viewer === "HTML5"){
+                url += "/pdb/explore/jmol.do?structureId="+pdbid;
+                url += (bionumber > -1)? "&bionumber=" + bionumber : '';
+                url += "&jmolMode=" + viewer;
+            }
+            return url;
+        }
+
+        document.addEventListener( "DOMContentLoaded", function(){
+            var pdbid = getParam( "pdbid" );
+            var bionumber = getParam( "bionumber" );
+            var bioassembly = bionumber2bioassembly( bionumber );
+            //
+            document.getElementById( "viewerSelect" ).value = "NGL";
+            setSelectChange( "viewerSelect", function( viewer ){
+                document.location = getViewerUrl( viewer, pdbid, bionumber );
+            } );
+            //
+            var ctrl = new NglController( "stageViewport", {
+                spin: false,
+                symmetry: -1,
+                colorScheme: "residueindex"
+            } );
+            ctrl.signals.taskCountChanged.add( function( delta, count ){
+                if( count > 0 ){
+                    document.getElementById( "stageProgress" ).style.display = "block";
+                }else{
+                    document.getElementById( "stageProgress" ).style.display = "none";
+                }
+            } );
+            var viewerElement = document.getElementById( "stageViewport" );
+            var containerElement = document.getElementById( "viewerContainer" );
+            var pickingElement = document.getElementById( "pickingInfo" );
+            var headingElement = document.getElementById( "viewerHeading" );
+            var footerElement = document.getElementById( "viewerFooter" );
+            var bodyElement = document.getElementById( "viewerBody" );
+            var panelElement = document.getElementById( "viewerPanel" );
+            var leftColumn = document.getElementById( "leftColumn" );
+            var rightColumn = document.getElementById( "rightColumn" );
+            function toggleFullscreen(){
+                ctrl.toggleFullscreen( containerElement );
+            }
+            viewerElement.addEventListener( "dblclick", toggleFullscreen );
+            setCheckboxChange( "fullscreenCheckbox", toggleFullscreen );
+            var viewportHeight;
+            ctrl.signals.fullscreenChanged.add( function( isFullscreen ){
+                if( isFullscreen ){
+                    viewportHeight = viewerElement.style.height;
+                    viewerElement.style.height = ( screen.height ) + "px";
+                    headingElement.style.display = "none";
+                    footerElement.style.display = "none";
+                    bodyElement.style.padding = 0;
+                    bodyElement.classList.remove( "panel-body" );
+                    panelElement.classList.remove( "panel", "panel-default" );
+                    leftColumn.classList.add( "col-lg-10" );
+                    leftColumn.style.padding = "0";
+                    rightColumn.classList.add( "col-lg-2" );
+                    rightColumn.style.paddingTop = "15px";
+                }else{
+                    viewerElement.style.height = viewportHeight;
+                    headingElement.style.display = "block";
+                    footerElement.style.display = "block";
+                    bodyElement.style.padding = "1px";
+                    bodyElement.classList.add( "panel-body" );
+                    panelElement.classList.add( "panel", "panel-default" );
+                    leftColumn.classList.remove( "col-lg-10" );
+                    leftColumn.style.padding = "";
+                    rightColumn.classList.remove( "col-lg-2" );
+                    rightColumn.style.paddingTop = "";
+                }
+                document.getElementById( "fullscreenCheckbox" ).checked = isFullscreen;
+                ctrl.stage.handleResize();
+            } );
+            ctrl.signals.clicked.add( function( pd ){
+                console.log( pd );
+                var msg;
+                if( pd.atom ){
+                    msg = "Atom: " + pd.atom.qualifiedName();
+                }else if( pd.bond ){
+                    msg = "Bond: " +
+                        pd.bond.atom1.qualifiedName() + " - " + pd.bond.atom2.qualifiedName();
+                }else{
+                    msg = "";
+                }
+                pickingElement.innerHTML = msg;
+            } );
+            ctrl.signals.structureChanged.add( function(){
+                setStyleOptions();
+                setLigandStyleOptions();
+                setSelectOptions( "modelSelect", ctrl.getModelNames(), ctrl.getModel() );
+                setSelectOptions( "assemblySelect", ctrl.getAssemblyNames(), ctrl.getAssembly() );
+                setSelectOptions( "colorSchemeSelect", ctrl.getColorSchemeNames(), ctrl.getColorScheme() );
+                setCheckboxValue( "hydrogenVisibilityCheckbox", ctrl.getHydrogenVisibility() );
+                setCheckboxValue( "ionVisibilityCheckbox", ctrl.getIonVisibility() );
+                setCheckboxValue( "waterVisibilityCheckbox", ctrl.getWaterVisibility() );
+                setValue( "qualitySelect", ctrl.getQuality() );
+                setCheckboxValue( "spinCheckbox", ctrl.getSpin() );
+            } );
+            function setStyleOptions() {
+                setSelectOptions( "styleSelect", ctrl.getStyleNames(), ctrl.getStyle() );
+            }
+            function setLigandStyleOptions() {
+                setSelectOptions( "ligandStyleSelect", ctrl.getLigandStyleNames(), ctrl.getLigandStyle() );
+            }
+            function setSymmetryOptions(){
+                setSelectOptions( "symmetrySelect", ctrl.getSymmetryNames(), ctrl.getSymmetry() );
+            }
+            setSymmetryOptions();
+            ctrl.signals.symmetryDataLoaded.add( setSymmetryOptions );
+            ctrl.signals.assemblyChanged.add( function(){
+                setStyleOptions();
+                setLigandStyleOptions();
+                setSymmetryOptions();
+            } );
+            ctrl.signals.modelChanged.add( function(){
+                setStyleOptions();
+            } );
+            setSelectChange( "styleSelect", ctrl.setStyle );
+            setSelectChange( "ligandStyleSelect", ctrl.setLigandStyle );
+            setSelectChange( "modelSelect", ctrl.setModel );
+            setSelectChange( "assemblySelect", ctrl.setAssembly );
+            setSelectChange( "symmetrySelect", ctrl.setSymmetry );
+            setSelectChange( "colorSchemeSelect", ctrl.setColorScheme );
+            setCheckboxChange( "hydrogenVisibilityCheckbox", ctrl.setHydrogenVisibility );
+            setCheckboxChange( "ionVisibilityCheckbox", ctrl.setIonVisibility );
+            setCheckboxChange( "waterVisibilityCheckbox", ctrl.setWaterVisibility );
+            setSelectChange( "qualitySelect", ctrl.setQuality );
+            setCheckboxChange( "spinCheckbox", ctrl.setSpin );
+            setButtonClick( "centerButton", ctrl.centerView );
+            setButtonClick( "screenshotButton", ctrl.downloadScreenshot );
+            ctrl.loadPdbid( pdbid, bioassembly, isAUResidueLarge );
+        });
+
+
+        $("#3dviewtab").addClass("active");
+    </script>
+</body>
+</html>
+
