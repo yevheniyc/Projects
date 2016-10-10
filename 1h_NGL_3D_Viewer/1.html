@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+</head>
+<body>
+    <script src="libs/ngl.js"></script>
+    <script>
+    	// When 
+    		// 1. DOM contents have been loaded
+    		// 2. Initiate NGL stage and attach it to id=viewport
+    		// 3. Add default representation of the Peptidase 4 => 1nu8
+        document.addEventListener( "DOMContentLoaded", function() {
+            var stage = new NGL.Stage( "viewport" );
+            stage.loadFile( "rcsb://1nu8", { defaultRepresentation: true } );
+        } );
+    </script>
+    <div id="viewport" style="width:600px; height:400px;"></div>
+</body>
+</html>
