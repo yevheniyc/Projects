@@ -29,7 +29,9 @@
      
     <!-- WRO Includes -->
     <link rel="stylesheet" type="text/css" media="all" href="libs/ngl.css"/>
-    <!-- <script type="text/javascript" src="libs/ngl.js"></script> -->
+    <!-- <script src="http://cdn.rcsb.org/rcsb-pdb/assets/vendor/ngl/ngl.js"></script> -->
+    <script type="text/javascript" src="libs/ngl.js"></script>
+    <script type="text/javascript" src="libs/ngl_extended.js"></script>
 
     <style>
         @media (min-height:  450px) { #stageViewport { height: 250px; } }
@@ -338,8 +340,7 @@
         </div>
     </div>
 
-
-    <script src="http://cdn.rcsb.org/rcsb-pdb/assets/vendor/ngl/ngl.js"></script>
+    <script type="text/javascript" src="libs/ngl_full.js"></script>
     <script>
 
         var isAUResidueLarge = false;
@@ -395,7 +396,9 @@
         }
 
         function getViewerUrl( viewer, pdbid, bionumber ){
+            // CLEAN
             var url = "";
+            console.log("VIEWER is: ", viewer);
             if (viewer === "NGL") {
                 url += "/pdb/ngl/ngl.do?pdbid="+pdbid;
                 url += (bionumber > -1)? "&bionumber=" + bionumber : '';
@@ -414,6 +417,7 @@
             var pdbid = getParam( "pdbid" );
             var bionumber = getParam( "bionumber" );
             var bioassembly = bionumber2bioassembly( bionumber );
+            // var bioassembly = "__AU";
             //
             document.getElementById( "viewerSelect" ).value = "NGL";
             setSelectChange( "viewerSelect", function( viewer ){
