@@ -7,6 +7,8 @@
 	<!-- <script src="http://cdn.rcsb.org/rcsb-pdb/assets/vendor/ngl/ngl.js"></script> -->
     <script src="libs/ngl.js"></script>
     <script>
+
+
     	// Drilling down into the molecular information
     	function getPickingMessage(d){
 	        var msg;
@@ -29,22 +31,37 @@
 	        return msg;
 	    }
 
+
 	    // Showing basic information instead
-	    function getBasicPickingMessage(d) {
-	    	var msg = "atom: " +
+	    function getBasicPickingMessage(prefix, d) {
+	    	var msg = prefix + " atom: " +
 	    			d.atom.resname + " at pos: " + 
 	    			d.atom.resno + 
 	    			" (" + d.atom.structure.name + ")";
 	    	return msg;
 	    }
-    	// onClick
+
+
+    	// onHover
     	function onHover(molData) {
     		if (molData.atom) {
-    			console.log(getBasicPickingMessage(molData));
+    			console.log(getBasicPickingMessage("Hovered over", molData));
     		} else {
     			console.log("Hovered over unidentified canvas area");
     		}
     	}
+
+
+    	// onClick
+    	function onClick(molData) {
+    		if (molData.atom) {
+    			console.log(getBasicPickingMessage("Clicked on", molData));
+    		} else {
+    			console.log("Clicked over unidentified canvas area");
+    		}
+    	}
+
+
     	// When 
     		// 1. DOM contents have been loaded
     		// 2. Initiate NGL stage and attach it to id=viewport
@@ -54,6 +71,7 @@
             stage = new NGL.Stage( "viewport" );
             stage.loadFile( "rcsb://1nu8", {defaultRepresentation: true });
             stage.signals.hovered.add(onHover);
+            stage.signals.clicked.add(onClick);
         });
     </script>
     <div id="viewport" style="width:600px; height:400px;"></div>
