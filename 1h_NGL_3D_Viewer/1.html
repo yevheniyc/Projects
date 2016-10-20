@@ -8,7 +8,7 @@
     <script src="libs/ngl.js"></script>
     <script>
     	// Drilling down into the molecular information
-    	function getPickingMessage( d, prefix ){
+    	function getPickingMessage(d){
 	        var msg;
 	        if( d.atom ){
 	            msg = "atom: " +
@@ -28,10 +28,17 @@
 	        }
 	        return msg;
 	    }
+
+	    // Showing basic information instead
+	    function getBasicPickingMessage(d) {
+	    	var msg = "atom: " +
+	    			d.atom.resname + " at pos: " + d.atom.resno;
+	    	return msg;
+	    }
     	// onClick
     	function onHover(molData) {
     		if (molData.atom) {
-    			console.log(getPickingMessage(molData));
+    			console.log(getBasicPickingMessage(molData));
     		} else {
     			console.log("Hovered over unidentified canvas area");
     		}
