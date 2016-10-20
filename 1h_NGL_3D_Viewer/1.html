@@ -7,14 +7,45 @@
 	<!-- <script src="http://cdn.rcsb.org/rcsb-pdb/assets/vendor/ngl/ngl.js"></script> -->
     <script src="libs/ngl.js"></script>
     <script>
+    	// Drilling down into the molecular information
+    	function getPickingMessage( d, prefix ){
+	        var msg;
+	        if( d.atom ){
+	            msg = "atom: " +
+	                d.atom.qualifiedName() +
+	                " (" + d.atom.structure.name + ")";
+	                console.log('hi');
+	        }else if( d.bond ){
+	            msg = "bond: " +
+	                d.bond.atom1.qualifiedName() + " - " + d.bond.atom2.qualifiedName() +
+	                " (" + d.bond.structure.name + ")";
+	        }else if( d.volume ){
+	            msg = "volume: " +
+	                d.volume.value.toPrecision( 3 ) +
+	                " (" + d.volume.volume.name + ")";
+	        }else{
+	            msg = "nothing";
+	        }
+	        return msg;
+	    }
+    	// onClick
+    	function onHover(molData) {
+    		if (molData.atom) {
+    			console.log(getPickingMessage(molData));
+    		} else {
+    			console.log("Hovered over unidentified canvas area");
+    		}
+    	}
     	// When 
     		// 1. DOM contents have been loaded
     		// 2. Initiate NGL stage and attach it to id=viewport
     		// 3. Add default representation of the Peptidase 4 => 1nu8
+    	var stage;
         document.addEventListener( "DOMContentLoaded", function() {
-            var stage = new NGL.Stage( "viewport" );
-            stage.loadFile( "rcsb://1nu8", { defaultRepresentation: true } );
-        } );
+            stage = new NGL.Stage( "viewport" );
+            stage.loadFile( "rcsb://1nu8", {defaultRepresentation: true });
+            stage.signals.hovered.add(onHover);
+        });
     </script>
     <div id="viewport" style="width:600px; height:400px;"></div>
 </body>
