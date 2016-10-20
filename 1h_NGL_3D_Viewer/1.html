@@ -32,7 +32,9 @@
 	    // Showing basic information instead
 	    function getBasicPickingMessage(d) {
 	    	var msg = "atom: " +
-	    			d.atom.resname + " at pos: " + d.atom.resno;
+	    			d.atom.resname + " at pos: " + 
+	    			d.atom.resno + 
+	    			" (" + d.atom.structure.name + ")";
 	    	return msg;
 	    }
     	// onClick
