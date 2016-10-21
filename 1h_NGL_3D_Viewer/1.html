@@ -5,6 +5,7 @@
 </head>
 <body>
 	<!-- <script src="http://cdn.rcsb.org/rcsb-pdb/assets/vendor/ngl/ngl.js"></script> -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script src="libs/ngl.js"></script>
     <script>
 
@@ -44,36 +45,62 @@
 
     	// onHover
     	function onHover(molData) {
+    		var el = $("#resPos");
     		if (molData.atom) {
-    			console.log(getBasicPickingMessage("Hovered over", molData));
+    			el.html(getBasicPickingMessage("Hovered over", molData));
     		} else {
-    			console.log("Hovered over unidentified canvas area");
+    			el.html("Hovered over unidentified canvas area");
     		}
     	}
 
 
     	// onClick
     	function onClick(molData) {
+    		var el = $("#resPos");
     		if (molData.atom) {
-    			console.log(getBasicPickingMessage("Clicked on", molData));
+    			el.html(getBasicPickingMessage("Clicked on", molData));
     		} else {
-    			console.log("Clicked over unidentified canvas area");
+    			el.html("Clicked over unidentified canvas area");
     		}
     	}
-
 
     	// When 
     		// 1. DOM contents have been loaded
     		// 2. Initiate NGL stage and attach it to id=viewport
     		// 3. Add default representation of the Peptidase 4 => 1nu8
-    	var stage;
+    	var repr;
         document.addEventListener( "DOMContentLoaded", function() {
-            stage = new NGL.Stage( "viewport" );
-            stage.loadFile( "rcsb://1nu8", {defaultRepresentation: true });
+            var stage = new NGL.Stage( "viewport" );
+            // stage.loadFile( "rcsb://1nu8", {defaultRepresentation: true });
+            stage.loadFile("rcsb://1nu8").then(function(o) {
+            	repr = o;
+            	repr.addRepresentation( "cartoon", { sele: "*" } );
+            	repr.centerView();
+            });
+
             stage.signals.hovered.add(onHover);
             stage.signals.clicked.add(onClick);
         });
+
+        // Now let's change molecule representation style based on select
+        $(document).on("change", "#styleSelect", function() {
+        	repr.clearRepresentations();
+        	repr.addRepresentation($(this).val(), {sele: "*"});
+        })
+
     </script>
+
+    <select id="styleSelect" class="form-control input-sm">
+        <option value="cartoon" selected="">Cartoon</option>
+    	<option value="backbone">Backbone</option>
+    	<option value="surface">Surface</option>
+    	<option value="spacefill">Spacefill</option>
+    	<option value="licorice">Licorice</option>
+    	<option value="ball+stick">Ball/Stick</option>
+	</select>
+
+	<div id="resPos"></div>
+
     <div id="viewport" style="width:600px; height:400px;"></div>
 </body>
 </html>
