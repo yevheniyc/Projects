@@ -5,17 +5,102 @@
 </head>
 <body>
 	<!-- <script src="http://cdn.rcsb.org/rcsb-pdb/assets/vendor/ngl/ngl.js"></script> -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script src="libs/ngl.js"></script>
     <script>
+
+
+    	// Drilling down into the molecular information - NOT used
+    	function getPickingMessage(d){
+	        var msg;
+	        if( d.atom ){
+	            msg = "atom: " +
+	                d.atom.qualifiedName() +
+	                " (" + d.atom.structure.name + ")";
+	                console.log('hi');
+	        }else if( d.bond ){
+	            msg = "bond: " +
+	                d.bond.atom1.qualifiedName() + " - " + d.bond.atom2.qualifiedName() +
+	                " (" + d.bond.structure.name + ")";
+	        }else if( d.volume ){
+	            msg = "volume: " +
+	                d.volume.value.toPrecision( 3 ) +
+	                " (" + d.volume.volume.name + ")";
+	        }else{
+	            msg = "nothing";
+	        }
+	        return msg;
+	    }
+
+
+	    // Showing basic information instead
+	    function getBasicPickingMessage(prefix, d) {
+	    	var msg = prefix + " atom: " +
+	    			d.atom.resname + " at pos: " + 
+	    			d.atom.resno + 
+	    			" (" + d.atom.structure.name + ")";
+	    	return msg;
+	    }
+
+
+    	// onHover
+    	function onHover(molData) {
+    		var el = $("#resPos");
+    		if (molData.atom) {
+    			el.html(getBasicPickingMessage("Hovered over", molData));
+    		} else {
+    			el.html("Hovered over unidentified canvas area");
+    		}
+    	}
+
+
+    	// onClick
+    	function onClick(molData) {
+    		var el = $("#resPos");
+    		if (molData.atom) {
+    			el.html(getBasicPickingMessage("Clicked on", molData));
+    		} else {
+    			el.html("Clicked over unidentified canvas area");
+    		}
+    	}
+
     	// When 
     		// 1. DOM contents have been loaded
     		// 2. Initiate NGL stage and attach it to id=viewport
     		// 3. Add default representation of the Peptidase 4 => 1nu8
+    	var repr;
         document.addEventListener( "DOMContentLoaded", function() {
             var stage = new NGL.Stage( "viewport" );
-            stage.loadFile( "rcsb://1nu8", { defaultRepresentation: true } );
-        } );
+            // stage.loadFile( "rcsb://1nu8", {defaultRepresentation: true });
+            stage.loadFile("rcsb://1nu8").then(function(o) {
+            	repr = o;
+            	repr.addRepresentation( "cartoon", { sele: "*" } );
+            	repr.centerView();
+            });
+
+            stage.signals.hovered.add(onHover);
+            stage.signals.clicked.add(onClick);
+        });
+
+        // Now let's change molecule representation style based on select
+        $(document).on("change", "#styleSelect", function() {
+        	repr.clearRepresentations();
+        	repr.addRepresentation($(this).val(), {sele: "*"});
+        })
+
     </script>
+
+    <select id="styleSelect" class="form-control input-sm">
+        <option value="cartoon" selected="">Cartoon</option>
+    	<option value="backbone">Backbone</option>
+    	<option value="surface">Surface</option>
+    	<option value="spacefill">Spacefill</option>
+    	<option value="licorice">Licorice</option>
+    	<option value="ball+stick">Ball/Stick</option>
+	</select>
+
+	<div id="resPos"></div>
+
     <div id="viewport" style="width:600px; height:400px;"></div>
 </body>
 </html>
