@@ -21,6 +21,12 @@ Python provides a number of awesome packages for natural language processing (NL
 
 This is a great start for developing custom search, content recommenders, and even AI applications.
 
+
+#### Links After Class Discussion
+[NLP With Python](http://www.one-tab.com/page/hfnDmR4uTWWqpxXeqMtNCw)
+
+
+
 #### The approaches to use today
     - Keyword analyis, n-grams, co-occurence, stemming, and other techniques from a previous generation of NLP tools are no longer the best approaches to use. 
     - Whether NLP request Big Data tooling and use of clusters; instead, the course will show practical applications on a laptop. 
