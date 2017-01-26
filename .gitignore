@@ -3,6 +3,8 @@
 *.pyc
 *.swp
 
+# ignore local node packages
+node_modules/
 # eclipse specific git ignore
 *.pydevproject
 .project
