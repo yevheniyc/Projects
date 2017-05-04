@@ -17,14 +17,13 @@
 	            msg = "atom: " +
 	                d.atom.qualifiedName() +
 	                " (" + d.atom.structure.name + ")";
-	                console.log('hi');
 	        }else if( d.bond ){
 	            msg = "bond: " +
 	                d.bond.atom1.qualifiedName() + " - " + d.bond.atom2.qualifiedName() +
 	                " (" + d.bond.structure.name + ")";
 	        }else if( d.volume ){
 	            msg = "volume: " +
-	                d.volume.value.toPrecision( 3 ) +
+	                d.volume.value.toPrecision(3) +
 	                " (" + d.volume.volume.name + ")";
 	        }else{
 	            msg = "nothing";
@@ -36,8 +35,9 @@
 	    // Showing basic information instead
 	    function getBasicPickingMessage(prefix, d) {
 	    	var msg = prefix + " atom: " +
-	    			d.atom.resname + " at pos: " + 
-	    			d.atom.resno + 
+            "chain: " + d.atom.chainname + "=> " +
+	    			d.atom.resname + " at pos: " +
+	    			d.atom.resno +
 	    			" (" + d.atom.structure.name + ")";
 	    	return msg;
 	    }
@@ -64,7 +64,7 @@
     		}
     	}
 
-    	// When 
+    	// When
     		// 1. DOM contents have been loaded
     		// 2. Initiate NGL stage and attach it to id=viewport
     		// 3. Add default representation of the Peptidase 4 => 1nu8
@@ -92,15 +92,15 @@
 
     <select id="styleSelect" class="form-control input-sm">
         <option value="cartoon" selected="">Cartoon</option>
-    	<option value="backbone">Backbone</option>
-    	<option value="surface">Surface</option>
-    	<option value="spacefill">Spacefill</option>
-    	<option value="licorice">Licorice</option>
-    	<option value="ball+stick">Ball/Stick</option>
-	</select>
+        <option value="backbone">Backbone</option>
+        <option value="surface">Surface</option>
+        <option value="spacefill">Spacefill</option>
+        <option value="licorice">Licorice</option>
+        <option value="ball+stick">Ball/Stick</option>
+    </select>
 
-	<div id="resPos"></div>
+	 <div id="resPos"></div>
 
-    <div id="viewport" style="width:600px; height:400px;"></div>
+    <div id="viewport" style="width:1000px; height:800px;"></div>
 </body>
 </html>
