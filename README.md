@@ -1,9 +1,9 @@
-##Projects
+## Projects
 Complete functional projects covering a wide spectrum of topics, including games, bioinformatics, networking,
 system/database administration, data science, robotics, machine learning, artificial intelligence, and startup
 ideas written in Python, C, SQL, Bash, JavaScript (D3) on various platforms Django, ReactJS, NodeJS, and more.
 
-####SocketIO
+#### SocketIO
 This script was written as a response to Wikipedia Research Engineering Team's challenge: 
 https://github.com/halfak/research-engineering-task
 
@@ -16,7 +16,7 @@ The main problem here is that threads in Python do NOT achieve true concurrency 
 
 ---
 
-####Game
+#### Game
 A set of fun games developed with Python and CodeSkulptor for the Coursera's Interactive Programming with Python. 
 Implemented basic concepts in mathematics, OOP and graphics to build interactive and dynamic games. Links are provided to "test" the games :)
   1. Pong - implementation of classic ping pong game (don't have too much fun!). Play [here](http://www.codeskulptor.org/#user30_SsWb6yzDfo7EUyz.py)
@@ -32,7 +32,7 @@ Implemented basic concepts in mathematics, OOP and graphics to build interactive
 
 ---
 
-####GT_Computer_Networks
+#### GT_Computer_Networks
 Assignments and projects for the Georgia Tech's Computer Networks 6250 Spring 2016 graduate course (OMSCS Program)
   1. Project_1 - Mininet, simple/complex network topologies, network simulation
   2. Project_2 - Mininet, Pyretic, use SDN to build configurable firewall
@@ -41,28 +41,28 @@ Assignments and projects for the Georgia Tech's Computer Networks 6250 Spring 20
 
 ---
 
-####Evercam API Test
+#### Evercam API Test
 Testing and creating wrappers for Evercam's APIs in Jupyter.
 
 ---
 
-####Assay Data Parsers
+#### Assay Data Parsers
 Data parsers for files generated from different types of assays: ELISA, FACS, Softmax, Biacore/Biacore4000, MSD
 
 ---
 
-####Udacity Subtitles Parser
+#### Udacity Subtitles Parser
 Parser for Udacity's subtitiles zip files.
 
 ---
 
-####Multi-threading with C
+#### Multi-threading with C
 A set of projects tackling multi-processing, multi-threading, and socket programming with C. 
 Topics covered with examples in C are Producer-Consumer models, server/client communication, coditional variables, critical sections, mutaxes and more!
 
 ---
 
-####Genomic Data Visualization in Python and Jupyter (to be implemented)
+#### Genomic Data Visualization in Python and Jupyter (to be implemented)
 Testing and implementation of the following project at FullStackDatascientist.io: [click here](http://fullstackdatascientist.io/2016-03-15-genomic-data-visualization-using-python/)
 
 Great OOP approach for larger data driven projects.
