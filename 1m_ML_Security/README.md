@@ -1,7 +1,7 @@
 # Following: Data Science For Security Professionals
 SafariBooksOnline Live-Training Session
 
-*DISCLAIMER*: 
+### DISCLAIMER: 
 * Some parts of the repository came directly from the original [source][https://github.com/cgivre/data-science-for-security-professionals]. 
 * I've modified it for personal educational purposes and use it as reference and guide. 
 * The datasets were originally provided by the course repo. 
