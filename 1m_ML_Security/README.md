@@ -1,5 +1,3 @@
-![oreilly-logo](./img/oreilly.png)
-
 # Following: Data Science For Security Professionals
 SafariBooksOnline Live-Training Session
 
